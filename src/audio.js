@@ -49,8 +49,7 @@ const AU=(()=>{
     level:S(t=>{[523,659,784,1046].forEach((f,i)=>{tone(f,t+i*.1,.5,'triangle',.12);tone(f*2,t+i*.1,.4,'sine',.04);});}),
     beep:S((t,n)=>{tone(n===4?980:760,t,.2,'square',.09);}),
     go:S(t=>{tone(1560,t,.5,'triangle',.12);tone(780,t,.5,'triangle',.07);burst(t,.5,{f:300,f2:2400,q:.7,g:.25});api.cheer(.5);}),
-    launch:S(t=>{const p=pan(0);tone(70,t,1.1,'triangle',.14,420,p);tone(140,t,1.1,'triangle',.09,840,p);tone(210,t,1.1,'sine',.05,1260,p);
-      burst(t,1.2,{f:300,f2:3600,q:.7,g:.28,a:.5,dest:p});[392,523,659,784].forEach((f,i)=>tone(f,t+.55+i*.07,.9,'triangle',.07));burst(t+.55,.4,{type:'highpass',f:5000,g:.06});api.cheer(.6);}),
+    launch:S(t=>{tone(392,t,.5,'sine',.07);tone(523,t+.12,.5,'sine',.07);tone(784,t+.24,.8,'sine',.08);tone(1568,t+.24,.6,'sine',.02);}),
     revs(){if(!ready())return;revT=performance.now()+1500;},
     radio:S(t=>{burst(t,.07,{type:'highpass',f:2800,g:.1});tone(1900,t+.05,.04,'sine',.05);burst(t+.5,.05,{type:'highpass',f:3200,g:.06});}),
     gun:S(t=>{for(const o of[0,.75]){for(let i=0;i<4;i++)burst(t+o+i*.085,.06,{f:2800,q:3,g:.38});tone(110,t+o,.12,'square',.06);}burst(t+.4,.35,{f:700,f2:300,q:.7,g:.12});}),

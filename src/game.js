@@ -229,6 +229,7 @@ function bars(lv,nx,fld){
 }
 let carTab='parts';
 function rCar(){
+  $('v-car').classList.toggle('clear',carTab==='parts');
   if(save.tut>=1&&save.tut<=3)carTab='parts';
   const segs=[['parts','UPGRADES'],['rd','R&D'],['svc','SERVICE'],['liv','LIVERY']];
   $('v-car').innerHTML=`<div class="seg">${segs.map(([k,n])=>`<button data-cc="${k}" class="${carTab===k?'on':''}">${n}${k==='svc'&&!isFree()&&minHp()<50?' ⚠':''}</button>`).join('')}</div><div class="sp" style="height:10px"></div>`+({parts:carParts,rd:rdHtml,svc:svcHtml,liv:livHtml})[carTab]();
