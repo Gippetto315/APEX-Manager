@@ -146,8 +146,8 @@ button:disabled{opacity:.38;pointer-events:none}
 #hc{position:fixed;right:8px;top:var(--top);display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .lapb{background:rgba(7,10,17,.86);border:1px solid var(--line);border-radius:10px;padding:5px 11px;text-align:right}.lapb b{font-family:'Saira Condensed';font-weight:900;font-size:26px;line-height:1}
 .ib{display:flex;gap:5px}.ib button{width:42px;height:36px;border-radius:10px;background:rgba(7,10,17,.86);border:1px solid var(--line);font-family:'Saira Condensed';font-weight:900;font-size:14px;display:grid;place-items:center}.ib svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
-#radio{position:fixed;left:50%;top:calc(var(--top) + 256px);transform:translate(-50%,-6px);background:rgba(7,10,17,.94);border:1px solid var(--line);border-left:3px solid var(--a);border-radius:10px;padding:7px 13px 8px;max-width:86vw;opacity:0;transition:.25s;pointer-events:none!important}
-#radio.on{opacity:1;transform:translate(-50%,0)}#radio small{display:flex;gap:7px;align-items:center;font-family:'Saira Condensed';font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--a2)}#radio div{font-size:14px;font-weight:600;margin-top:1px}
+#radio{position:fixed;left:50%;top:auto;bottom:calc(var(--bot) + var(--dkh) + 60px);transform:translate(-50%,6px);background:rgba(7,10,17,.8);border:1px solid var(--line);border-left:3px solid var(--a);border-radius:10px;padding:7px 13px 8px;max-width:86vw;opacity:0;transition:.25s;pointer-events:none!important}
+#radio.on{opacity:1;transform:translate(-50%,0)}#radio small{display:flex;gap:7px;align-items:center;font-family:'Saira Condensed';font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--a2)}#radio div{font-size:12.5px;font-weight:600;margin-top:0;line-height:1.25}#radio{padding:5px 11px 6px!important;max-width:80vw!important}#radio small{font-size:10px}
 .wave{display:flex;gap:2px;align-items:center;height:10px}.wave i{width:2px;background:var(--a);border-radius:1px;animation:wv .6s ease-in-out infinite alternate}.wave i:nth-child(2){animation-delay:.15s}.wave i:nth-child(3){animation-delay:.3s}.wave i:nth-child(4){animation-delay:.45s}
 @keyframes wv{from{height:2px}to{height:10px}}
 #dock{position:fixed;left:8px;right:8px;bottom:calc(var(--bot) + 8px);background:rgba(10,14,24,.92);border:1px solid var(--line);border-radius:20px;padding:10px;display:grid;grid-template-columns:auto 1fr;gap:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 30px rgba(0,0,0,.5)}
@@ -222,6 +222,7 @@ input{font-family:'Saira Condensed';font-weight:800;font-size:26px;letter-spacin
 .sp-by{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);left:0;right:0;font-family:'Saira';font-weight:600;font-size:10px;letter-spacing:.32em;opacity:.32}
 .sp-ln i{position:absolute;left:-45%;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,rgba(150,185,255,.55));animation:spLn 1.5s linear infinite}
 @keyframes spLn{to{transform:translateX(330vw)}}
+#spd{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}#spd.hide{display:none}
 #rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}#rain.hide{display:none}
 #toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 64px);transform:translate(-50%,-30px);opacity:0;z-index:90;background:linear-gradient(180deg,#2a3a63,#1b2644);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px 16px;font-weight:700;font-size:14px;max-width:88vw;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:all .35s;pointer-events:none}#toast.on{opacity:1;transform:translate(-50%,0)}
 #nav button.dot{position:relative}#nav button.dot::after{content:'';position:absolute;top:5px;right:calc(50% - 18px);width:9px;height:9px;border-radius:50%;background:#ff4b5c;box-shadow:0 0 0 2px #0a0f1c}
@@ -294,6 +295,7 @@ input{font-family:'Saira Condensed';font-weight:800;font-size:26px;letter-spacin
 <div id="sheet"><div class="card"><div class="grab"></div><div id="sheet-b"></div></div></div>
 <div id="strat" class="ov hide"></div>
 <canvas id="rain" class="hide"></canvas>
+<canvas id="spd" class="hide"></canvas>
 <div id="hud" class="hide">
   <div id="tower"></div>
   <div id="hc"><div class="lapb"><div class="lbl">LAP</div><b id="h-lap">1/10</b><div class="lbl" id="h-wx" style="color:#7db8ff"></div></div>
